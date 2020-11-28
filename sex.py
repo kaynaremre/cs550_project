@@ -1,4 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+
+
 
 import boto3
 
@@ -63,13 +65,10 @@ def display_summary(summary_type, summary):
 
 
 def main():
-    photo= raw_input("Enter a picture for mask detection : ")
+    photo = raw_input("Enter a picture for mask detection : ")
 
     person_count=detect_labels_local_file(photo)
     print("Persons detected: " + str(person_count))
-
-
-
 
 if __name__ == "__main__":
     main()
