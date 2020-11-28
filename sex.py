@@ -65,7 +65,7 @@ def display_summary(summary_type, summary):
 
 
 def main():
-    photo = raw_input("Enter a picture for mask detection : ")
+    photo = input("Enter a picture for mask detection : ")
 
     person_count=detect_labels_local_file(photo)
     print("Persons detected: " + str(person_count))
