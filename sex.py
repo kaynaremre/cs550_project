@@ -3,6 +3,9 @@
 
 
 import boto3
+import sys
+
+
 
 def detect_labels_local_file(photo):
 
@@ -65,7 +68,9 @@ def display_summary(summary_type, summary):
 
 
 def main():
-    photo = input("Enter a picture for mask detection : ")
+
+
+    photo = sys.argv[1]
 
     person_count=detect_labels_local_file(photo)
     print("Persons detected: " + str(person_count))
