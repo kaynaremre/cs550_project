@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 
-
-
 import boto3
 import sys
-
-
 
 def detect_labels_local_file(photo):
 
