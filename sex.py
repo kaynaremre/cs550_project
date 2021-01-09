@@ -54,7 +54,7 @@ def display_summary(summary_type, summary, resp):
         print('No person identificated without face mask')
     else:
         print('There are',len(summary),'people without mask !')
-        for i,j in enumerate(summary,resp):
+        for i,j in zip(summary,resp):
             print("IDs", i)
             print("Response", j)
         
