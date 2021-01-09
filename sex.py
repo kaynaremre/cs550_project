@@ -29,8 +29,6 @@ def display_summary(summary_type, summary, resp):
     else:
         #print('There are',len(summary),'people without mask !')
         for i in summary:
-            print("ID :", i)
-            print("Location:")
             print(resp[i]['BoundingBox'])
 
 def main():
