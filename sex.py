@@ -56,7 +56,7 @@ def display_summary(summary_type, summary, resp):
         print('There are',len(summary),'people without mask !')
         for i,j in zip(summary,resp):
             print("IDs", i)
-            print("Response", j)
+            print("Response", j[0]['EquipmentDetections']['BoundingBox'])
         
 
 
