@@ -59,6 +59,7 @@ def display_summary(summary_type, summary, resp):
             print("ID :", i)
             print("Location :", j['BodyParts'][0]['EquipmentDetections'][0]['BoundingBox'])
             box.append(j['BodyParts'][0]['EquipmentDetections'][0]['BoundingBox'])
+    box
     return box
 
 
