@@ -67,7 +67,7 @@ def main():
     photo = sys.argv[1]
 
     person_count, labels=detect_labels_local_file(photo)
-    print(labels)
+    #print(labels)
     #print("Persons detected: " + str(person_count))
 
 if __name__ == "__main__":
