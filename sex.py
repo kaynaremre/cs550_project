@@ -53,7 +53,7 @@ def display_summary(summary_type, summary):
     if (len(summary)==0):
         print('No person identificated without face mask')
     else:
-        print('There are people without mask !')
+        print('There are',len(summary),'people without mask !')
         for i in summary:
             print("IDs", i)
 
