@@ -42,20 +42,22 @@ def detect_labels_local_file(photo):
 
     #print('Person ID Summary\n----------------')
     #display_summary('With required equipment',response['Summary']['PersonsWithRequiredEquipment'] )
-    display_summary('Without required equipment',response['Summary']['PersonsWithoutRequiredEquipment'] )
+    display_summary('Without required equipment',response['Summary']['PersonsWithoutRequiredEquipment'], response['Persons'])
     #display_summary('Indeterminate',response['Summary']['PersonsIndeterminate'] )
     #print(response)
     return len(response['Persons'])
 
 #Display summary information for supplied summary.
-def display_summary(summary_type, summary):
+def display_summary(summary_type, summary, resp):
     #print (summary_type + '\n\tIDs: ',end='')
     if (len(summary)==0):
         print('No person identificated without face mask')
     else:
         print('There are',len(summary),'people without mask !')
-        for i in summary:
+        for i,j in enumerate(summary,resp):
             print("IDs", i)
+            print("Response", j)
+        
 
 
 def main():
