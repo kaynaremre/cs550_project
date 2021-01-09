@@ -15,7 +15,7 @@ def detect_labels_local_file(photo):
     #display_summary('With required equipment',response['Summary']['PersonsWithRequiredEquipment'] )
     a = display_summary('Without required equipment',response['Summary']['PersonsWithoutRequiredEquipment'], response['Persons'])
     #display_summary('Indeterminate',response['Summary']['PersonsIndeterminate'] )
-    #print(response)
+    print(a)
     return (len(response['Persons']), a)
 
 #Display summary information for supplied summary.
