@@ -13,11 +13,11 @@ def detect_labels_local_file(photo):
 
     #print('Person ID Summary\n----------------')
     #display_summary('With required equipment',response['Summary']['PersonsWithRequiredEquipment'] )
-    display_summary('Without required equipment',response['Summary']['PersonsWithoutRequiredEquipment'], response['Persons'])
+    #display_summary('Without required equipment',response['Summary']['PersonsWithoutRequiredEquipment'], response['Persons'])
     #display_summary('Indeterminate',response['Summary']['PersonsIndeterminate'] )
     #print(response['Summary'])
     #print(response)
-
+    print(response['Persons'])
     return (len(response['Persons']))
 
 #Display summary information for supplied summary.
