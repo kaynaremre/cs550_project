@@ -42,29 +42,31 @@ def detect_labels_local_file(photo):
 
     #print('Person ID Summary\n----------------')
     #display_summary('With required equipment',response['Summary']['PersonsWithRequiredEquipment'] )
-    display_summary('Without required equipment',response['Summary']['PersonsWithoutRequiredEquipment'], response['Persons'])
+    a = display_summary('Without required equipment',response['Summary']['PersonsWithoutRequiredEquipment'], response['Persons'])
     #display_summary('Indeterminate',response['Summary']['PersonsIndeterminate'] )
     #print(response)
-    return len(response['Persons'])
+    return (len(response['Persons']), a)
 
 #Display summary information for supplied summary.
 def display_summary(summary_type, summary, resp):
     #print (summary_type + '\n\tIDs: ',end='')
+    box = []
     if (len(summary)==0):
         print('No person identificated without face mask')
     else:
         print('There are',len(summary),'people without mask !')
         for i,j in zip(summary,resp):
-            print("IDs", i)
-            print("Response", j['BodyParts'][0]['EquipmentDetections'][0]['BoundingBox'])
-        
+            print("ID :", i)
+            print("Location :", j['BodyParts'][0]['EquipmentDetections'][0]['BoundingBox'])
+            box.append(j['BodyParts'][0]['EquipmentDetections'][0]['BoundingBox'])
+    return box
 
 
 def main():
 
     photo = sys.argv[1]
 
-    person_count=detect_labels_local_file(photo)
+    person_count, labels=detect_labels_local_file(photo)
     #print("Persons detected: " + str(person_count))
 
 if __name__ == "__main__":
