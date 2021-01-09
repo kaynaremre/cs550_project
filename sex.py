@@ -59,7 +59,6 @@ def display_summary(summary_type, summary, resp):
             print("ID :", i)
             print("Location :", j['BodyParts'][0]['EquipmentDetections'][0]['BoundingBox'])
             box.append(j['BodyParts'][0]['EquipmentDetections'][0]['BoundingBox'])
-    box
     return box
 
 
@@ -68,7 +67,7 @@ def main():
     photo = sys.argv[1]
 
     person_count, labels=detect_labels_local_file(photo)
-    labels
+    print(labels)
     #print("Persons detected: " + str(person_count))
 
 if __name__ == "__main__":
