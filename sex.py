@@ -54,6 +54,8 @@ def display_summary(summary_type, summary):
         print('No person identificated without face mask')
     else:
         print('There are people without mask !')
+        for i in summary:
+            print("IDs", i)
 
 
 def main():
@@ -61,7 +63,7 @@ def main():
     photo = sys.argv[1]
 
     person_count=detect_labels_local_file(photo)
-    print("Persons detected: " + str(person_count))
+    #print("Persons detected: " + str(person_count))
 
 if __name__ == "__main__":
     main()
