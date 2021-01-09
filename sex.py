@@ -52,6 +52,8 @@ def display_summary(summary_type, summary):
     #print (summary_type + '\n\tIDs: ',end='')
     if (len(summary)==0):
         print('No person identificated without face mask')
+    else:
+        print('There are people without mask !')
 
 
 def main():
