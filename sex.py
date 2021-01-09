@@ -13,7 +13,7 @@ def detect_labels_local_file(photo):
 
     #print('Person ID Summary\n----------------')
     #display_summary('With required equipment',response['Summary']['PersonsWithRequiredEquipment'] )
-    #display_summary('Without required equipment',response['Summary']['PersonsWithoutRequiredEquipment'], response['Persons'])
+    display_summary('Without required equipment',response['Summary']['PersonsWithoutRequiredEquipment'], response['Persons'])
     #display_summary('Indeterminate',response['Summary']['PersonsIndeterminate'] )
     #print(response['Summary'])
     #print(response)
@@ -31,7 +31,7 @@ def display_summary(summary_type, summary, resp):
         for i in summary:
             print("ID :", i)
             print("Location:")
-            print(resp[i]['BodyParts'][0]['EquipmentDetections'][0]['BoundingBox'])
+            print(resp[i]['BoundingBox'])
 
 def main():
 
