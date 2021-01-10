@@ -7,7 +7,7 @@ def detect_labels_local_file(photo):
 
     client=boto3.client('rekognition')
 
-    with open(photo, 'rb') as image:
+    with open(photo, 'rb+') as image:
         response = client.detect_protective_equipment(Image={'Bytes': image.read()},
             SummarizationAttributes={'MinConfidence':80, 'RequiredEquipmentTypes':['FACE_COVER']})
 
