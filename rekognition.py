@@ -28,6 +28,7 @@ def display_summary(summary_type, summary, resp):
         print('No person identificated without face mask')
     else:
         #print('There are',len(summary),'people without mask !')
+        
         for i in summary:
             print(resp[i]['BoundingBox'])
 
